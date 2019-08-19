@@ -3,7 +3,7 @@ import React, {Component} from'react';
 class Counter extends Component{
     state = {
         count:0,
-        imageURL:"https://picsum.photos/200"
+        imageURL:"https://picsum.photos/300"
     };
     render() {
         return (

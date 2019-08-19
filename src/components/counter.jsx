@@ -12,9 +12,10 @@ class Counter extends Component{
     //}
 
 
-handelIncrement=()=>{
-    console.log("Increment Clicked", this);
-}
+handelIncrement =()=>{
+
+    this.setState({count: this.state.count + 1});
+};
     render() {
 
         return (

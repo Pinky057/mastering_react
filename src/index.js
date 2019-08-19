@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+const person={
+    name:'pinky',
+    walk() {},
+    talk() {}
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+person.talk();//dot notationconst
+person.name='';
+const targetMember='name';
+targetMember.value = name;
+person[targetMember.value]='Ishrat';
+//bracket notation use when,dont know what is coming ahed of time

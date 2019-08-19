@@ -1,12 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+class Person{
+    constructor(name){
+        this.name=name;
+    }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+    walk(){
+        console.log("walk");
+    }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Teacher extends Person{
+    //whenever there to call constructor in child we needto call constructor of parentclass
+//super keyword use to reference parent class constructor
+    constructor(name, degree){
+ super(name);
+ this.degree=degree;
+    }
+    teach(){
+        console.log("teach");
+    }
+}
+const teacher =new Teacher('pinky', 'msc');

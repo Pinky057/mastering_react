@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+//var-> functon scope
+//let-> block scopped
+//const->lock scopped and constant
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function sayHello(){
+    for(var i=0; i<5; i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+sayHello();
+function sayBye(){
+    for(let j=0; j<10; j++){
+       console.log(j)
+    }
+console.log(j); //as blockscopped it will not work
+}
+sayBye();
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const x=1;
+x=2;//cant reassaing

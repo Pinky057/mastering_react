@@ -4,4 +4,4 @@ const sqre=function(nmbr){
 console.log(sqre(7));
 
 const sqr = nmbr=>nmbr*nmbr;//arrow funtion
-console.log(sqr(5));
+console.log(sqr(6));

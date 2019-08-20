@@ -25,6 +25,7 @@ doHandelIncrement=()=>{
 
         return (
         <div>
+            <h4>{this.props.id}</h4>
             {this.props.children}
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button onClick={this.doHandelIncrement} className="btn btn-secondary btn-sm">Increment</button>

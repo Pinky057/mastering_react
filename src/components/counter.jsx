@@ -21,17 +21,15 @@ doHandelIncrement=()=>{
   this.handelIncrement({id:1});
 };
     render() {
-        console.log(this.props);
-
         return (
         <div>
-            <h4>{this.props.id}</h4>
-            {this.props.children}
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-            <button onClick={this.doHandelIncrement} className="btn btn-secondary btn-sm">Increment</button>
-        <ul>
-            {this.state.tags.map(tag =><li key={tag}>{ tag }</li>)}
-        </ul>
+            <button
+                onClick={this.doHandelIncrement}
+                className="btn btn-secondary btn-sm">Increment
+            </button>
+            <button onClick={this.props.onDelete}
+                className="btn btn-danger btn-sm m-2">Delete</button>
 
         </div>
     );

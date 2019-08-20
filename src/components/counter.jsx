@@ -2,15 +2,8 @@ import React, {Component} from'react';
 
 class Counter extends Component{
     state = {
-        value:this.props.value, //changing to count to value for cleaner code and understanding code.
- tags:['tag1', 'tag2', 'tag3']
+        value: this.props.counter.value
     };
-
-    //constructor(){
-      //  super();
-        //this.handelIncrement = this.handelIncrement.bind(this);
-    //}
-
 
 handelIncrement =(product)=>{
     console.log(product);
@@ -29,7 +22,7 @@ doHandelIncrement=()=>{
                 className="btn btn-secondary btn-sm">Increment
             </button>
             <button
-                onClick ={()=>{this.props.onDelete(this.props.id)}}
+                onClick ={()=>{this.props.onDelete(this.props.counter.id)}}
                 className="btn btn-danger btn-sm m-2">Delete
             </button>
 

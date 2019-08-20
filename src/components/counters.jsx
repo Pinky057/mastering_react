@@ -10,7 +10,12 @@ class Counters extends Component {
             {id: 4, value: 0}
         ]
     };
-
+ handelIncrement = counter =>{
+    const counters=[...this.state.counters];  //thi process will
+    counters[0].value++;                      //increment locally
+     console.log(this.state.counters[0]);     //not in the dom element
+                                              //so we dont want it like this
+ };
     handleReset=()=>{
         const counters=this.state.counters.map(c=>{
             c.value =0;
@@ -35,6 +40,7 @@ class Counters extends Component {
                     < Counter
                         key={counter.id}
                         onDelete ={this.handleDelete}
+                        onIncrement={this.handelIncrement}
                         counter={counter}
                     />)}
 

@@ -11,10 +11,12 @@ class Counters extends Component {
         ]
     };
  handelIncrement = counter =>{
-    const counters=[...this.state.counters];  //thi process will
-    counters[0].value++;                      //increment locally
-     console.log(this.state.counters[0]);     //not in the dom element
-                                              //so we dont want it like this
+    const counters=[...this.state.counters];
+    const index=counters.indexOf(counter);
+    counters[index]={...counter};
+    counters[index].value++;
+     this.setState({counters});
+
  };
     handleReset=()=>{
         const counters=this.state.counters.map(c=>{

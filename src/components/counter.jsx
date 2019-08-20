@@ -21,10 +21,11 @@ doHandelIncrement=()=>{
   this.handelIncrement({id:1});
 };
     render() {
+        console.log(this.props);
 
         return (
         <div>
-
+            {this.props.children}
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button onClick={this.doHandelIncrement} className="btn btn-secondary btn-sm">Increment</button>
         <ul>

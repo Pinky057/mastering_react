@@ -7,7 +7,7 @@ class Counter extends Component{
         //ajax call to fetch data from the server based on changes
     }
     componentWillUnmount() {
-        console.log('counter unmount');
+        console.log('Counter Unmount');  //it will do the memory release
     }
 
     render() {

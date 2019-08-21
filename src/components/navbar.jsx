@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-//stateless functional component
+//stateless functional component  //we cant use life cycle hooks in stateless functional component
 const NavBar=({totalCounters})=>{  //simplifying by object destructuring
-                                   // in functional components we add props as a parameter
+    console.log('NavBar Rendered');  // in functional components we add props as a parameter
     return (
         <nav className="navbar navbar-light bg-light">
             <a className="navbar-brand" href="#">

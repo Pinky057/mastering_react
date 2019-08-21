@@ -14,12 +14,20 @@ class App extends Component {
         ]
     };
 
-   constructor(props){
-       super(props);
-       console.log('App-Constructor', this.props);
+   constructor(){     //1st life cycle hook
+       super();
+       console.log('App-Constructor');
       // this.state=this.props.something;
 
    }
+
+   componentDidMount() {   //2nd life cycle hook
+          //ajax call     //its called after our component is render into the dom
+       console.log('App-Mounted');
+
+
+   }
+
 
     handelIncrement = counter =>{
         const counters=[...this.state.counters];
@@ -43,6 +51,7 @@ class App extends Component {
         this.setState({counters});
     };
     render() {
+        console.log('App-Rendered');//third life cycle hook
         return (
             <React.Fragment>
                 <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}/>

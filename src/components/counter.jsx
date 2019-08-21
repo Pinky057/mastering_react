@@ -6,6 +6,9 @@ class Counter extends Component{
         console.log(prevState, prevState);
         //ajax call to fetch data from the server based on changes
     }
+    componentWillUnmount() {
+        console.log('counter unmount');
+    }
 
     render() {
         console.log('Counter-Rendered');

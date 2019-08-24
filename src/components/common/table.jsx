@@ -4,8 +4,8 @@ import TableBody from "./tableBody";
 
 
 
-const Table=(props)=> {
-    const{columns,  sortColumn, onSort, data}=props;
+const Table=({columns,  sortColumn, onSort, data})=> {  //now they are props
+
     return (
         <table className="table">
             <TableHeader

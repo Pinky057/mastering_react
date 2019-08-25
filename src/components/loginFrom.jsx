@@ -20,9 +20,8 @@ class LoginFrom extends Component {
                         <label htmlFor="password">Password</label>
                         <input id= "password" type="text" className="form-control"/>
                     </div>
+                    <button className="btn btn-primary">Login</button>
                 </form>
-
-              <button className="btn btn-primary">Login</button>
 
             </div>
         );

@@ -1,16 +1,11 @@
 import React from 'react';
 
-const Input=({name, label, value, type, onChange, error})=> {
+const Input=({name, label, error, ...rest})=> {
     return (
         <div className="form-group">
             <label htmlFor={name}>{label}</label>
-            <input
-                value={value}
-                onChange={onChange}
-                autoFocus
-                name={name}
-                id={name}
-                type={type}
+            <input{...rest} name={name} id={name}
+
                 className="form-control"/>
 
                 {/*if error is truthy then it will execute*/}

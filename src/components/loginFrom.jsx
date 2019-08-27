@@ -54,7 +54,16 @@ return errors;
         console.log("Submitted");
     };
     validateProperty =({name, value})=>{
-    if (name==='username')   {
+        const obj={[name]:value};
+
+        const schema={[name]: this.schema[name]};
+        const{error}=Joi.validate(obj, schema);
+        return error? error.details[0].message: null;
+
+        /*if(error) return  null;
+        return error.details[0].message;*/
+
+   /* if (name==='username')   {
         if (value.trim()==='')
             return "Username is required";
     }
@@ -62,7 +71,7 @@ return errors;
         if (name==='password')   {
             if (value.trim()==='')
                 return "Password is required";
-        }
+        }*/
 
     };
 

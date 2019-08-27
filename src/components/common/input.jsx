@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input=({name, label, value, onChange, error})=> {
+const Input=({name, label, value, type, onChange, error})=> {
     return (
         <div className="form-group">
             <label htmlFor={name}>{label}</label>
@@ -10,7 +10,7 @@ const Input=({name, label, value, onChange, error})=> {
                 autoFocus
                 name={name}
                 id={name}
-                type="text"
+                type={type}
                 className="form-control"/>
 
                 {/*if error is truthy then it will execute*/}

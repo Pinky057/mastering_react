@@ -1,18 +1,19 @@
 import React, {Component} from "react";
-import * as PropTypes from "prop-types";
 import Form from "./common/form";
 import Joi from 'joi-browser';
+import Input from './common/input';
 import {getMovie, saveMovie} from "../services/fakeMovieService";
 import {getGenres} from "../services/fakeGenreService";
 
 class MovieFrom extends Form {
     state ={
       data:{
-          title:'',
-          genreId: '',
-          numberInStock: '',
-          dailyRentalRate: ''
+          title:"",
+          genreId: "",
+          numberInStock: "",
+          dailyRentalRate: ""
       },
+
       genres: [],
         error:{}
 
@@ -24,21 +25,21 @@ class MovieFrom extends Form {
 
         title:Joi.string()
             .required()
-            .label('Title'),
+            .label("Title"),
         genreId:Joi.string()
             .required()
-            .label('Genre'),
+            .label("Genre"),
         numberInStock:Joi.number()
             .required()
             .min(0)
             .max(100)
-            .label('Number In Stock'),
+            .label("Number In Stock"),
 
         dailyRentalRate:Joi.number()
             .required()
             .min(0)
             .max(100)
-            .label('Daily Rental Rate')
+            .label("Daily Rental Rate")
 
 
     };
@@ -61,6 +62,7 @@ class MovieFrom extends Form {
     mapToViewModel(movie){
         return{
             _id:movie._id,
+            title:movie.title,
             genreId:movie.genre._id,
             numberInStock: movie.numberInStock,
             dailyRentalRate: movie.dailyRentalRate
@@ -69,22 +71,21 @@ class MovieFrom extends Form {
 
 doSubmit=()=>{
   saveMovie(this.state.data);
-  this.props.history.push('/movies');
+  this.props.history.push("/movies");
 
 };
 
 
     render() {
-        let {match, history} = this.props;
         return (
             <div>
                 <h1>Movie Form</h1>
                 <form  onSubmit={this.handleSubmit}>
 
-                    {this.renderInput('title', 'Title')}
-                    {this.renderSelect('genreId', 'Genre', this.state.genres)}
-                    {this.renderInput('numberInStock', 'Number In Stock', 'number')}
-                    {this.renderInput('dailyRentalRate', 'Daily Rental rate', 'number')}
+                    {this.renderInput("title", "Title")}
+                    {this.renderSelect("genreId", "Genre", this.state.genres)}
+                    {this.renderInput("numberInStock", "Number In Stock", "number")}
+                    {this.renderInput("dailyRentalRate", "Daily Rental rate", "number")}
                     {this.renderButton("Save")}
 
                 </form>
@@ -94,9 +95,5 @@ doSubmit=()=>{
     }
 }
 
-MovieFrom.propTypes = {
-    match: PropTypes.any,
-    history: PropTypes.any
-}
 
 export default MovieFrom;

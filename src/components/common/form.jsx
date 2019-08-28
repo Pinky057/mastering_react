@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Joi from "joi-browser";
 import Input from "./input";
-import Select from "./select"
+import Select from "./select";
 
 class Form extends Component {
 
@@ -37,7 +37,7 @@ class Form extends Component {
         const obj={[name]:value};
 
         const schema={[name]: this.schema[name]};
-        const{error}=Joi.validate(obj, schema);
+        const {error}=Joi.validate(obj, schema);
         return error? error.details[0].message: null;
 
         /*if(error) return  null;
@@ -80,7 +80,7 @@ class Form extends Component {
 renderButton(label){
     return(
     <button   disabled={this.validate()}
-              className="btn btn-primary">Login</button>
+              className="btn btn-primary">{label}</button>
     );
   }
     renderSelect(name, label, options){
@@ -99,7 +99,7 @@ renderButton(label){
 }
 
 
-        renderInput(name, label, type='text'){
+renderInput(name, label, type="text"){
     const{data, errors}=this.state;
     return(
         <Input

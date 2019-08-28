@@ -2,9 +2,7 @@ import React from 'react';
 
 const Rentals=()=> {
     return (
-        <div>
-
-        </div>
+        <h1>Rentals</h1>
     );
 }
 

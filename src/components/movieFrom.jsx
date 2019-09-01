@@ -1,7 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 import Form from "./common/form";
 import Joi from 'joi-browser';
-import Input from './common/input';
 import {getMovie, saveMovie} from "../services/fakeMovieService";
 import {getGenres} from "../services/fakeGenreService";
 
@@ -66,7 +65,7 @@ class MovieFrom extends Form {
             genreId:movie.genre._id,
             numberInStock: movie.numberInStock,
             dailyRentalRate: movie.dailyRentalRate
-        }
+        };
     }
 
 doSubmit=()=>{

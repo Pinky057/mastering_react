@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import index from "../quizService";
 
 //using {useState} allows to incorporate state in a function
 

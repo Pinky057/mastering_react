@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import FormUserDetails from "./FormUserDetails";
 
 class UserForm extends Component {
     state={
@@ -31,16 +32,23 @@ class UserForm extends Component {
 
     //handle fields change
 
-    handleChange=()=>{
-
+    handleChange= input => e =>{
+   this.setState({[input]:e.target.value});
     };
 
     render() {
-        return (
-            <div>
+        const{step}=this.state;
+        const{firstName, lastName, email, occupation, city, bio}=this.state;
+        const values={firstName, lastName, email, occupation, city, bio};
+        switch (step) {
+            case 1:
+                return(
+                    <FormUserDetails
 
-            </div>
-        );
+
+                    />
+                )
+        }
     }
 }
 

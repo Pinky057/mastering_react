@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class FormUserDetails extends Component {
+    //its calls the next step when the continue button is clicked
     continue=e=>{
         e.preventDefault();
         this.props.nextStep();
@@ -38,9 +39,22 @@ class FormUserDetails extends Component {
                          onChange={handleChange('email')}
                          defaultValue={values.email}
                      />
+                     <br/>
+                     <RaisedButton
+                     label="Continue"
+                     primary={true}
+                     style={styles.button}
+                     onClick={this.continue}
+                     />
+
                  </React.Fragment>
             </MuiThemeProvider>
         );
+    }
+}
+const styles={
+    button:{
+        margin:15
     }
 }
 
